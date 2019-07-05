@@ -1,9 +1,9 @@
 <?php
 
-namespace tourApp-backend\Http\Controllers\Auth;
+namespace practise\Http\Controllers\Auth;
 
-use tourApp-backend\User;
-use tourApp-backend\Http\Controllers\Controller;
+use practise\User;
+use practise\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -59,7 +59,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \tourApp-backend\User
+     * @return \practise\User
      */
     protected function create(array $data)
     {

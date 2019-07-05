@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Providers;
+namespace practise\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;

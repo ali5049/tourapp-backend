@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Http\Middleware;
+namespace practise\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

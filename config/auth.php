@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => tourApp-backend\User::class,
+            'model' => practise\User::class,
         ],
 
         // 'users' => [

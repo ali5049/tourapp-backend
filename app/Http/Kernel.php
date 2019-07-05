@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Http;
+namespace practise\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -14,11 +14,11 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        \tourApp-backend\Http\Middleware\CheckForMaintenanceMode::class,
+        \practise\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
-        \tourApp-backend\Http\Middleware\TrimStrings::class,
+        \practise\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \tourApp-backend\Http\Middleware\TrustProxies::class,
+        \practise\Http\Middleware\TrustProxies::class,
         
     ];
 
@@ -29,12 +29,12 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \tourApp-backend\Http\Middleware\EncryptCookies::class,
+            \practise\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \tourApp-backend\Http\Middleware\VerifyCsrfToken::class,
+            \practise\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
 
@@ -52,16 +52,16 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \tourApp-backend\Http\Middleware\Authenticate::class,
+        'auth' => \practise\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \tourApp-backend\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \practise\Http\Middleware\RedirectIfAuthenticated::class,
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'json.response' => \tourApp-backend\Http\Middleware\ForceJsonResponse::class,
+        'json.response' => \practise\Http\Middleware\ForceJsonResponse::class,
     ];
 
     /**
@@ -74,7 +74,7 @@ class Kernel extends HttpKernel
     protected $middlewarePriority = [
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \tourApp-backend\Http\Middleware\Authenticate::class,
+        \practise\Http\Middleware\Authenticate::class,
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,

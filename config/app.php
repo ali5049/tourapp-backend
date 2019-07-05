@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        tourApp-backend\Providers\AppServiceProvider::class,
-        tourApp-backend\Providers\AuthServiceProvider::class,
-        // tourApp-backend\Providers\BroadcastServiceProvider::class,
-        tourApp-backend\Providers\EventServiceProvider::class,
-        tourApp-backend\Providers\RouteServiceProvider::class,
+        practise\Providers\AppServiceProvider::class,
+        practise\Providers\AuthServiceProvider::class,
+        // practise\Providers\BroadcastServiceProvider::class,
+        practise\Providers\EventServiceProvider::class,
+        practise\Providers\RouteServiceProvider::class,
 
     ],
 

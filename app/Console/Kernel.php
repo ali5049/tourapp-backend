@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Console;
+namespace practise\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

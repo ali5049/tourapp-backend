@@ -35,7 +35,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => tourApp-backend\User::class,
+        'model' => practise\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'webhook' => [

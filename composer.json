@@ -34,7 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "tourApp-backend\\": "app/"
+            "practise\\": "app/"
         },
         "classmap": [
             "database/seeds",

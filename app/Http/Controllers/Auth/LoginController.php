@@ -1,8 +1,8 @@
 <?php
 
-namespace tourApp-backend\Http\Controllers\Auth;
+namespace practise\Http\Controllers\Auth;
 
-use tourApp-backend\Http\Controllers\Controller;
+use practise\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller

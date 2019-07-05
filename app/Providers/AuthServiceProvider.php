@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Providers;
+namespace practise\Providers;
 use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'tourApp-backend\Model' => 'tourApp-backend\Policies\ModelPolicy',
+        // 'practise\Model' => 'practise\Policies\ModelPolicy',
     ];
 
     /**

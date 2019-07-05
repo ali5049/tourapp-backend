@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Http\Middleware;
+namespace practise\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Fideloper\Proxy\TrustProxies as Middleware;

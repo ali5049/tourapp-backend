@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Http\Controllers;
+namespace practise\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

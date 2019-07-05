@@ -1,10 +1,10 @@
 <?php
 
-namespace tourApp-backend\Http\Controllers\API;
-use tourApp-backend\User;
+namespace practise\Http\Controllers\API;
+use practise\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use tourApp-backend\Http\Controllers\Controller;
+use practise\Http\Controllers\Controller;
 use Hash;
 
 class AuthController extends Controller

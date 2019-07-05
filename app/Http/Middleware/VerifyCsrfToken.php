@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Http\Middleware;
+namespace practise\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as Middleware;
 

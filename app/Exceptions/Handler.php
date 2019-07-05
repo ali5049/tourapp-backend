@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend\Exceptions;
+namespace practise\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

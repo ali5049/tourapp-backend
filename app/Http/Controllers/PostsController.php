@@ -1,9 +1,9 @@
 <?php
 
-namespace tourApp-backend\Http\Controllers;
+namespace practise\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use tourApp-backend\Post;
+use practise\Post;
 class PostsController extends Controller
 {
     

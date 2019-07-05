@@ -1,6 +1,6 @@
 <?php
 
-namespace tourApp-backend;
+namespace practise;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     public function posts(){
-        return $this->hasMany('tourApp-backend\Post');
+        return $this->hasMany('practise\Post');
     }
     use HasApiTokens, Notifiable;
 

@@ -28,17 +28,17 @@ $app = new Illuminate\Foundation\Application(
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
-    tourApp-backend\Http\Kernel::class
+    practise\Http\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    tourApp-backend\Console\Kernel::class
+    practise\Console\Kernel::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    tourApp-backend\Exceptions\Handler::class
+    practise\Exceptions\Handler::class
 );
 
 /*
