@@ -212,7 +212,7 @@ GET /api/posts/{id}
             }
         }
 ```
-### One Post:
+### Companies:
 
 ```http
 GET,POST /api/companies
