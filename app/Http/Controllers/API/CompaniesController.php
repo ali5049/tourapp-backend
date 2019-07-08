@@ -1,12 +1,13 @@
 <?php
 
-namespace practise\Http\Controllers;
-use Illuminate\Support\Facades\Validator;
+namespace practise\Http\Controllers\API;
+
+use practise\Company;
 use Illuminate\Http\Request;
-use practise\Post;
-class PostsController extends Controller
+use practise\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+class CompaniesController extends Controller
 {
-    
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return Post::orderBy('created_at','desc')->with(['user'])->paginate(30);
+        return Company::orderBy('name','ASC')->get();
     }
 
     /**
@@ -36,13 +37,10 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'company' => 'required|string|max:255',
-            'title' => 'required|string|max:255',
-            'body' => 'required',
-            'price' => 'required|integer',
-            'days' => 'required|integer',
-            'departure' => 'required|date',
-            
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:255',
+            'email' => 'required|email',
+            'address' => 'required'
         ]);
     
         if ($validator->fails())
@@ -50,35 +48,32 @@ class PostsController extends Controller
             return response(['errors'=>$validator->errors()->all()], 422);
         }
         
-        if($request->hasFile('image')) {
+        if($request->hasFile('logo')) {
             // Get filename with extension            
-            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filenameWithExt = $request->file('logo')->getClientOriginalName();
             // Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);            
            // Get just ext
-            $extension = $request->file('image')->getClientOriginalExtension();
+            $extension = $request->file('logo')->getClientOriginalExtension();
             //Filename to store
             $fileNameToStore = $filename.'_'.time().'.'.$extension;                       
           // Upload Image
-            $path = $request->file('image')->storeAs('public/post_images', $fileNameToStore);
+            $path = $request->file('logo')->storeAs('public/company_logos', $fileNameToStore);
         } else {
             $fileNameToStore = 'default.jpg';
         }
         // create Post
         
       
-        $post = new Post;
-        $post->user_id = $request->user()->id;
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->company = $request->input('company');
-        $post->price = $request->input('price');
-        $post->days = $request->input('days');
-        $post->image = $fileNameToStore;
-        $post->departure = $request->input('departure');
-        $post->save();
+        $company = new Company;
+        $company->name = $request->input('name');
+        $company->phone = $request->input('phone');
+        $company->email = $request->input('email');
+        $company->address = $request->input('address');
+        $company->logo = $fileNameToStore;
+        $company->save();
     
-        $response = ['success' => true,'post'=>$post];
+        $response = ['success' => true,'company'=>$company];
     
         return response($response, 200);
     }
@@ -86,21 +81,21 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \practise\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Company $company)
     {
-        return Post::findOrFail($id);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \practise\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Company $company)
     {
         //
     }
@@ -109,10 +104,10 @@ class PostsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \practise\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Company $company)
     {
         //
     }
@@ -120,10 +115,10 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \practise\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Company $company)
     {
         //
     }

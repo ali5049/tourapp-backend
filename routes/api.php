@@ -26,7 +26,8 @@ Route::group(['middleware' => ['json.response']], function () {
        
             return Auth::user();
         });
-        Route::resource('posts','PostsController');
+        Route::resource('posts','Api\PostsController');
+        Route::resource('companies','Api\CompaniesController');
     });
 
 });

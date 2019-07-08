@@ -23,7 +23,9 @@ class CreatePostsTable extends Migration
             $table->date('departure');
             $table->string('image')->default('default.jpg');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('company_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('company_id')->references('id')->on('companies');
             $table->timestamps();
         });
     }

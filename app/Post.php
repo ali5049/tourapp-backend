@@ -10,4 +10,7 @@ class Post extends Model
     public function user(){
         return $this->belongsTo('practise\User');
     }
+    public function company(){
+        return $this->belongsTo('practise\Company');
+    }
 }
