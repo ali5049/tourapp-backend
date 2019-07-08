@@ -102,7 +102,7 @@ POST /api/posts
 | `price` | `integer` | **Required**. Tour cost|
 | `departure` | `date` | **Required**. Departure date|
 | `image` | `image file` | **Optional**. Image of post|
-
+| `company_id` | `integer` | **Required**. Company Id for post|
 #### Response
 
 ```javascript
@@ -212,3 +212,19 @@ GET /api/posts/{id}
             }
         }
 ```
+### One Post:
+
+```http
+GET,POST /api/companies
+```
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `name` | `string` | **Required**. Company name |
+| `phone` | `string` | **Required**. Company's phone |
+| `email` | `string` | **Required**. Company's email |
+| `address` | `string` | **Required**. Company's address |
+| `logo` | `image` | **Optional**. Company's logo |
+
+
+
